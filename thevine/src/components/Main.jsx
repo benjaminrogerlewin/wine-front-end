@@ -1,7 +1,13 @@
-export default function Main() {
+import Nav from './Nav'
+import Home from './Home'
+
+export default function Main(props) {
+    const handleSignOut = props.handleSignOut;
+
     return(
         <div className='main'>
-            <h1>I am Main</h1>
+            <Nav handleSignOut={handleSignOut} />
+            <Home />
         </div>
     )
 }
