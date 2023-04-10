@@ -11,7 +11,7 @@
 }
 
 .login-box {
-  background-color: grey;
+  background-color: lightgray;
   margin: auto;
   height: 500px;
   width: 800px;
@@ -22,8 +22,41 @@
   align-items: center;
 }
 
+.nav-bar {
+  background-color: lightgray;
+  height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.home {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+}
+
+.recent-box {
+  background-color: lightgray;
+  height: 75vh;
+  width: 55vw;
+  border-radius: 20px;
+}
+
+.top-box {
+  background-color: lightgray;
+  height: 75vh;
+  width: 35vw;
+  border-radius: 20px;
+}
+
 /* .main {
   width: 100vw;
   height: 100vh;
   position: relative;
 } */
+
+

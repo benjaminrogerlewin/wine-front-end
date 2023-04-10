@@ -1,5 +1,6 @@
 import './App.css'
-import { useState } from 'react'
+import Client from './services/api'
+import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Main from './components/Main'
 import Register from './components/Register'
@@ -14,6 +15,7 @@ import Label from './components/Label'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [wineContent, setWineContent] = useState([])
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -28,13 +30,24 @@ function App() {
     console.log(isLoggedIn)
   }
 
+  const getContent = () => {
+    Client.get(`/wines`).then((getContent) => {
+      setWineContent(getContent.data);
+      console.log(getContent.data)
+    });
+  };
+
+  useEffect(() => {
+    getContent();
+  }, []);
+
   return (
     <div className="App">
       {!isLoggedIn && <Login key='login' handleLogin={handleLogin} />}
       <Routes>
         <Route path='/register' element={<Register handleRegister={handleRegister}/>}/>
-        <Route path='/main' element={<Main />}/>
-        <Route path='/main' element={<Home handleSignOut={handleSignOut}/>}/>
+        <Route path='/main' element={<Main wineContent={wineContent}/>}/>
+        <Route path='/main' element={<Home handleSignOut={handleSignOut} wineContent={wineContent}/>}/>
         <Route path='/login' element={<Login handleRegister={handleRegister} handleLogin={handleLogin}/>}/>
         <Route path='/ratings' element={<Ratings />}/>
         <Route path='/ratings/:id' element={<RatingDetail />}/>
