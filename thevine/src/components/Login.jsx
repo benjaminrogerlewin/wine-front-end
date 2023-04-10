@@ -15,8 +15,8 @@ export default function Login(props) {
                     <br></br>
                     <br></br>
                 </form>
-                <Link to='/home'><button onClick={() => props.handleLogin()}>Login</button></Link>
-                <Link to='/register'><button onClick={() => props.handleLogin()}>Register</button></Link>
+                <Link to='/home'><button onClick={() => {props.handleLogin(); props.handleNavLogin()}}>Login</button></Link>
+                <Link to='/register'><button onClick={() => {props.handleLogin(); props.handleNavbar()}}>Register</button></Link>
             </div>
         </div>
     )
