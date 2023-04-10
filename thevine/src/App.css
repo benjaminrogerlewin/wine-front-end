@@ -69,6 +69,11 @@
   cursor: pointer;
 }
 
+#wine-image {
+  height: 200px;
+  border-radius: 10px;
+}
+
 .ratings-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

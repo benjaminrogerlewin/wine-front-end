@@ -8,7 +8,7 @@ export default function Nav(props) {
             <Link to='/home'><button>THE VINE</button></Link>
             <Link to='/ratings'><button>My Wines</button></Link>
             <Link to='/wines'><button>Wines</button></Link>
-            <Link to='/login'><button onClick={handleSignOut}>Sign Out</button></Link>
+            <Link to='/'><button onClick={handleSignOut}>Sign Out</button></Link>
         </div>
     )
 }
