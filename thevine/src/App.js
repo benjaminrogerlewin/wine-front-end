@@ -39,7 +39,6 @@ function App() {
   const getContent = () => {
     Client.get(`/wines`).then((getContent) => {
       setWineContent(getContent.data)
-      console.log(getContent.data)
     });
   };
 
@@ -55,9 +54,9 @@ function App() {
         <Route path='/register' element={<Register handleRegister={handleRegister}/>}/>
         <Route path='/home' element={<Home wineContent={wineContent}/>}/>
         <Route path='/login' element={<Login handleRegister={handleRegister} handleLogin={handleLogin} handleNavbar={handleNavbar}/>}/>
-        <Route path='/ratings' element={<Ratings />}/>
+        <Route path='/ratings' element={<Ratings wineContent={wineContent}/>}/>
         <Route path='/ratings/:id' element={<RatingDetail />}/>
-        <Route path='/wines' element={<Wines />}/>
+        <Route path='/wines' element={<Wines wineContent={wineContent}/>}/>
       </Routes>
     </div>
   );

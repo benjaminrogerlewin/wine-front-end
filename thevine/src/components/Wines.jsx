@@ -1,7 +1,11 @@
-export default function Wines() {
+export default function Wines(props) {
     return(
-        <div>
-            <h1> I am Wines </h1>
+        <div className='wine-container'>
+                {props.wineContent.map((wine) => (
+                    <div className='wine-card'>
+                        <h1>{wine.producer}</h1>
+                    </div>
+                ))}
         </div>
     )
 }
