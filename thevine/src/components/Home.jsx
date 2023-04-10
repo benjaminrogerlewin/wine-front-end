@@ -1,5 +1,3 @@
-import Nav from "./Nav"
-
 export default function Home(props) {
 
     console.log(props.wineContent)

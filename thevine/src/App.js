@@ -11,6 +11,7 @@ import RatingDetail from './components/RatingDetail'
 import Ratings from './components/Ratings'
 import Type from './components/Type'
 import Label from './components/Label'
+import Nav from './components/Nav'
 
 
 function App() {
@@ -27,7 +28,6 @@ function App() {
 
   const handleSignOut = () => {
     setIsLoggedIn(false)
-    console.log(isLoggedIn)
   }
 
   const getContent = () => {
@@ -44,10 +44,10 @@ function App() {
   return (
     <div className="App">
       {!isLoggedIn && <Login key='login' handleLogin={handleLogin} />}
+      {isLoggedIn && <Nav handleSignOut={handleSignOut}/>}
       <Routes>
         <Route path='/register' element={<Register handleRegister={handleRegister}/>}/>
-        <Route path='/main' element={<Main wineContent={wineContent}/>}/>
-        <Route path='/main' element={<Home handleSignOut={handleSignOut} wineContent={wineContent}/>}/>
+        <Route path='/home' element={<Home wineContent={wineContent}/>}/>
         <Route path='/login' element={<Login handleRegister={handleRegister} handleLogin={handleLogin}/>}/>
         <Route path='/ratings' element={<Ratings />}/>
         <Route path='/ratings/:id' element={<RatingDetail />}/>
