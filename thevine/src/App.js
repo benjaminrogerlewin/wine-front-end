@@ -9,6 +9,7 @@ import RatingDetail from './components/RatingDetail'
 import Ratings from './components/Ratings'
 import Wines from './components/Wines'
 import Nav from './components/Nav'
+import WineDetail from './components/WineDetail'
 
 
 function App() {
@@ -18,14 +19,17 @@ function App() {
 
   const handleLogin = () => {
     setIsLoggedIn(true)
+    localStorage.setItem('isLoggedIn', true)
   }
 
   const handleRegister = () => {
     setIsLoggedIn(false)
+    localStorage.setItem('isLoggedIn', false)
   }
 
   const handleSignOut = () => {
     setIsLoggedIn(false)
+    localStorage.setItem('isLoggedIn', false)
   }
 
   const handleNavbar = () => {
@@ -39,11 +43,14 @@ function App() {
   const getContent = () => {
     Client.get(`/wines`).then((getContent) => {
       setWineContent(getContent.data)
+      console.log(getContent.data)
     });
   };
 
   useEffect(() => {
     getContent()
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'
+    setIsLoggedIn(isLoggedIn)
   }, [])
 
   return (
@@ -55,8 +62,9 @@ function App() {
         <Route path='/home' element={<Home wineContent={wineContent}/>}/>
         <Route path='/login' element={<Login handleRegister={handleRegister} handleLogin={handleLogin} handleNavbar={handleNavbar}/>}/>
         <Route path='/ratings' element={<Ratings wineContent={wineContent}/>}/>
-        <Route path='/ratings/:id' element={<RatingDetail />}/>
+        <Route path='/ratings/:rating_id/:id' element={<RatingDetail wineContent={wineContent}/>}/>
         <Route path='/wines' element={<Wines wineContent={wineContent}/>}/>
+        <Route path='/wines/:id' element={<WineDetail wineContent={wineContent}/>}/>
       </Routes>
     </div>
   );

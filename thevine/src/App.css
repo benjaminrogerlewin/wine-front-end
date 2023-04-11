@@ -51,6 +51,7 @@
   height: 75vh;
   width: 35vw;
   border-radius: 20px;
+  overflow-y: scroll;
 }
 
 .wine-container {

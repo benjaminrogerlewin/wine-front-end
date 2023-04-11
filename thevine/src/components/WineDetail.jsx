@@ -3,10 +3,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import Client from '../services/api'
 
 export default function WineDetail(props) {
-  let { rating_id, id } = useParams();
+  let { user_id, id } = useParams()
   let navigate = useNavigate()
 
-  const [wine, setWine] = useState("");
+  const [wine, setWine] = useState("")
   const [formData, setFormData] = useState({
     user_id: 1,
     user_url: 1,
@@ -23,7 +23,7 @@ export default function WineDetail(props) {
   };
 
   const handleSubmit = () => {
-    Client.put(`/ratings/${rating_id}`, formData).then(() => {
+    Client.post(`/ratings`, formData).then(() => {
       navigate(`/home`)
     })
   };
@@ -33,13 +33,12 @@ export default function WineDetail(props) {
       (wine) => wine.id === parseInt(id)
     );
     setWine(selectedWine);
-  }, [props.wineContent, id])
-
+  }, [props.wineContent, id]);
+  
   return (
-    <div>
-      <div>
+    <div className='wine-detail'>
+      <div className='wine-area'>
         <h1>{wine?.producer}</h1>
-        <p>{wine?.ratings?.[0]?.rating}</p>
       </div>
       <div className='rate-area'>
         <form onSubmit={handleSubmit}>
@@ -106,7 +105,7 @@ export default function WineDetail(props) {
             <br></br>
             <br></br>
             <button className="btnLarge" id="btn-create" type="submit">
-              UPDATE
+              RATE
             </button>
         </form>
       </div>
