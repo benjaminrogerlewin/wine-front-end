@@ -3,10 +3,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import Client from '../services/api'
 
 export default function WineDetail(props) {
-  let { rating_id, id } = useParams();
+  let { rating_id, id } = useParams()
   let navigate = useNavigate()
 
-  const [wine, setWine] = useState("");
+  const [wine, setWine] = useState("")
   const [formData, setFormData] = useState({
     user_id: 1,
     user_url: 1,
@@ -18,21 +18,52 @@ export default function WineDetail(props) {
     notes: ""
   })
 
+  const updateRated = {
+    producer: wine?.producer,
+    vintage: wine?.vintage,
+    grape: wine?.grape,
+    area: wine?.area,
+    image: wine?.image,
+    rated: false,
+    wine_type: wine?.wine_type
+  }
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
+    setFormData({ ...formData, [e.target.id]: e.target.value })
+  }
 
   const handleSubmit = () => {
     Client.put(`/ratings/${rating_id}`, formData).then(() => {
-      navigate(`/home`)
+      navigate(`/ratings`)
     })
-  };
+  }
+
+  const deleteRating = () => {
+    console.log(rating_id)
+    Client.delete(`/ratings/${rating_id}`)
+  }
+
+  const handleUpdateRated = () => {
+    Client.put(`/wines/${id}`, updateRated)
+  }
+
+  const handleDelete = (e) => {
+    deleteRating()
+    handleUpdateRated()
+    navigate(`/ratings`)
+  }
+
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault()
+  //   handleSubmit()
+  //   handleUpdateRated()
+  // }
 
   useEffect(() => {
     let selectedWine = props.wineContent.find(
       (wine) => wine.id === parseInt(id)
-    );
-    setWine(selectedWine);
+    )
+    setWine(selectedWine)
   }, [props.wineContent, id])
 
   return (
@@ -109,6 +140,9 @@ export default function WineDetail(props) {
               UPDATE
             </button>
         </form>
+        <button onClick={() => handleDelete()}>
+              DELETE
+            </button>
       </div>
     </div>
   );

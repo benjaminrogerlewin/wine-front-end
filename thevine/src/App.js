@@ -40,10 +40,10 @@ function App() {
     setOnRegister(false)
   }
 
-  const getContent = () => {
-    Client.get(`/wines`).then((getContent) => {
-      setWineContent(getContent.data)
-      console.log(getContent.data)
+  const getContent = async() => {
+    const response = await Client.get(`/wines`).then((response) => {
+      setWineContent(response.data)
+      console.log(response.data)
     });
   };
 

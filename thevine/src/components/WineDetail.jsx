@@ -18,22 +18,54 @@ export default function WineDetail(props) {
     notes: ""
   })
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
-  const handleSubmit = () => {
-    Client.post(`/ratings`, formData).then(() => {
-      navigate(`/home`)
-    })
-  };
-
   useEffect(() => {
     let selectedWine = props.wineContent.find(
       (wine) => wine.id === parseInt(id)
     );
     setWine(selectedWine);
   }, [props.wineContent, id]);
+
+
+  const updateRated = {
+    producer: wine?.producer,
+    vintage: wine?.vintage,
+    grape: wine?.grape,
+    area: wine?.area,
+    image: wine?.image,
+    rated: true,
+    wine_type: wine?.wine_type
+  }
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = () => {
+    Client.post(`/ratings`, formData)
+      .then(() => {
+        navigate(`/home`)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
+  const handleUpdateRated = () => {
+    console.log(id)
+    console.log(updateRated)
+    Client.put(`/wines/${id}`, updateRated).then(() =>{
+      navigate(`/ratings`)
+    })
+  }
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+    handleSubmit()
+    handleUpdateRated()
+    navigate(`/ratings`)
+  }
+
+
   
   return (
     <div className='wine-detail'>
@@ -41,7 +73,7 @@ export default function WineDetail(props) {
         <h1>{wine?.producer}</h1>
       </div>
       <div className='rate-area'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleFormSubmit}>
         <label htmlFor="rating">
               RATING
             </label>

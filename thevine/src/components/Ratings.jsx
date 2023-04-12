@@ -12,7 +12,7 @@ export default function Ratings(props) {
       {props.wineContent.map((wine) => {
         if (wine.rated === true) {
           return (
-            <div className="ratings-card" onClick={() => showWine(wine)}>
+            <div className="ratings-card" onClick={() => showWine(wine)} key={wine.id}>
               <h1>{wine.producer}</h1>
             </div>
           );

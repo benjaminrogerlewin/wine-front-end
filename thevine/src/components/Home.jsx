@@ -14,7 +14,7 @@ export default function Home(props) {
         {props.wineContent.map((wine) => {
           if (wine.rated === true && wine?.ratings?.[0]?.rating >= 4.0) {
             return (
-              <div>
+              <div key={wine.id}>
                 <img src={wine.image} id="wine-image" />
                 <h1>{wine.producer}</h1>
               </div>
