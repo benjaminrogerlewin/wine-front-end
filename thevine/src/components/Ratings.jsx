@@ -13,7 +13,15 @@ export default function Ratings(props) {
         if (wine.rated === true) {
           return (
             <div className="ratings-card" onClick={() => showWine(wine)} key={wine.id}>
-              <h1>{wine.producer}</h1>
+              <div>
+                <img src={wine.image} id="wine-image" />
+              </div>
+              <div className="wine-info">
+                <h1>{wine.producer}</h1>
+                <p>{wine.area}</p>
+                <p>{wine.grape}</p>
+                <p>{wine.vintage}</p>
+              </div>
             </div>
           );
         }

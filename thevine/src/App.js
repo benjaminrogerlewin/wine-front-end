@@ -16,6 +16,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [onRegister, setOnRegister] = useState(false)
   const [wineContent, setWineContent] = useState([])
+  const [opacity, setOpacity] = useState()
 
   const handleLogin = () => {
     setIsLoggedIn(true)
@@ -55,17 +56,19 @@ function App() {
 
   return (
     <div className="App">
-      {!isLoggedIn && <Login key='login' handleLogin={handleLogin} handleNavbar={handleNavbar} handleNavLogin={handleNavLogin}/>}
-      {isLoggedIn && !onRegister && <Nav handleSignOut={handleSignOut}/>}
-      <Routes>
-        <Route path='/register' element={<Register handleRegister={handleRegister}/>}/>
-        <Route path='/home' element={<Home wineContent={wineContent}/>}/>
-        <Route path='/login' element={<Login handleRegister={handleRegister} handleLogin={handleLogin} handleNavbar={handleNavbar}/>}/>
-        <Route path='/ratings' element={<Ratings wineContent={wineContent}/>}/>
-        <Route path='/ratings/:rating_id/:id' element={<RatingDetail wineContent={wineContent}/>}/>
-        <Route path='/wines' element={<Wines wineContent={wineContent}/>}/>
-        <Route path='/wines/:id' element={<WineDetail wineContent={wineContent}/>}/>
-      </Routes>
+      <div className='background-cover' style={{backgroundColor: 'rgb(255, 255, 255, .5)'}}>
+        {!isLoggedIn && <Login key='login' handleLogin={handleLogin} handleNavbar={handleNavbar} handleNavLogin={handleNavLogin}/>}
+        {isLoggedIn && !onRegister && <Nav handleSignOut={handleSignOut}/>}
+        <Routes>
+          <Route path='/register' element={<Register handleRegister={handleRegister}/>}/>
+          <Route path='/home' element={<Home wineContent={wineContent}/>}/>
+          <Route path='/login' element={<Login handleRegister={handleRegister} handleLogin={handleLogin} handleNavbar={handleNavbar}/>}/>
+          <Route path='/ratings' element={<Ratings wineContent={wineContent}/>}/>
+          <Route path='/ratings/:rating_id/:id' element={<RatingDetail wineContent={wineContent}/>}/>
+          <Route path='/wines' element={<Wines wineContent={wineContent}/>}/>
+          <Route path='/wines/:id' element={<WineDetail wineContent={wineContent}/>}/>
+        </Routes>
+      </div>
     </div>
   );
 }

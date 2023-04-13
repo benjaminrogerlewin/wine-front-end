@@ -11,8 +11,15 @@ export default function Wines(props) {
     <div className="wine-container">
       {props.wineContent.map((wine) => (
         <div className="wine-card" onClick={() => showWine(wine)} key={wine.id}>
-          <img src={wine.image} id="wine-image" />
-          <h1>{wine.producer}</h1>
+          <div>
+            <img src={wine.image} id="wine-image" />
+          </div>
+          <div className="wine-info">
+            <h1 id='wine-name'>{wine.producer}</h1>
+            <p>{wine.area}</p>
+            <p>{wine.grape}</p>
+            <p>{wine.vintage}</p>
+          </div>
         </div>
       ))}
     </div>

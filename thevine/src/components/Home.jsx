@@ -10,7 +10,9 @@ export default function Home(props) {
           <div className="recent-info">
             <h1 id='wine-rating'>{props.wineContent?.[1]?.ratings?.[0]?.rating}</h1>
             <h1 id='wine-name'>{props.wineContent?.[1]?.producer}</h1>
-            <p></p>
+            <p>{props.wineContent?.[1]?.area}</p>
+            <p>{props.wineContent?.[1]?.grape}</p>
+            <p>{props.wineContent?.[1]?.vintage}</p>
           </div>
         </div>
       </div>
@@ -25,7 +27,9 @@ export default function Home(props) {
                 <div className="top-info">
                   <h1 id='wine-rating'>{wine?.ratings?.[0]?.rating}</h1>
                   <h1 id='wine-name'>{wine.producer}</h1>
-                  <p></p>
+                  <p>{wine.area}</p>
+                  <p>{wine.grape}</p>
+                  <p>{wine.vintage}</p>
                 </div>
               </div>
             );
