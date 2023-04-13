@@ -5,18 +5,22 @@ export default function Nav(props) {
 
   return (
     <div className="nav-bar">
-      <Link to="/home">
-        <button>THE VINE</button>
-      </Link>
-      <Link to="/ratings">
-        <button>My Wines</button>
-      </Link>
-      <Link to="/wines">
-        <button>Wines</button>
-      </Link>
-      <Link to="/">
-        <button onClick={handleSignOut}>Sign Out</button>
-      </Link>
+      <div className="home-logo">
+        <Link to="/home">
+          <button>THE VINE</button>
+        </Link>
+      </div>
+      <div className="nav-btns">
+        <Link to="/ratings">
+          <button>My Wines</button>
+        </Link>
+        <Link to="/wines">
+          <button>Wines</button>
+        </Link>
+        <Link to="/">
+          <button onClick={handleSignOut}>Sign Out</button>
+        </Link>
+      </div>
     </div>
   );
 }

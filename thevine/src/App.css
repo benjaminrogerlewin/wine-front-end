@@ -26,8 +26,19 @@
   background-color: lightgray;
   height: 10vh;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+}
+
+.home-logo {
+  margin: 30px;
+}
+
+.nav-btns {
+  width: 300px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .home {
@@ -44,6 +55,39 @@
   height: 75vh;
   width: 55vw;
   border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.recent-card {
+  background-color: tan;
+  margin: 10px;
+  height: 70vh;
+  width: 50vw;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#recent-wine-image {
+  height: 70vh;
+  width: 25vw;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.recent-info {
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5px;
+  font-size: 10px;
 }
 
 .top-box {
@@ -52,6 +96,37 @@
   width: 35vw;
   border-radius: 20px;
   overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-card {
+  background-color: tan;
+  height: 33vh;
+  width: 32vw;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-info {
+  width: 18vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5px;
+  font-size: 10px;
+}
+
+#top-wine-image {
+  height: 33vh;
+  width: 14vw;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .wine-container {
@@ -71,7 +146,7 @@
 }
 
 #wine-image {
-  height: 200px;
+  height: 400px;
   border-radius: 10px;
 }
 
