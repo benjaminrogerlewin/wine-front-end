@@ -69,8 +69,18 @@ export default function WineDetail(props) {
   return (
     <div id='detail'>
       <div className="rate-info">
+        <img src={wine?.image} id="detail-image"/>
         <h1>{wine?.producer}</h1>
-        <p>{wine?.ratings?.[0]?.rating}</p>
+        <p id='detail-info-p'>{wine?.area}</p>
+        <p id='detail-info-p'>{wine?.grape}</p>
+        <p id='detail-info-p'>{wine?.vintage}</p>
+        <p id='detail-info-p'>rating: {wine?.ratings?.[0]?.rating}</p>
+        <p id='detail-info-p'>review: {wine?.ratings?.[0]?.review}</p>
+        <p id='detail-info-p'>taste: {wine?.ratings?.[0]?.taste}</p>
+        <p id='detail-info-p'>notes: {wine?.ratings?.[0]?.notes}</p>
+        <button onClick={() => handleDelete()} id='detail-delete'>
+          DELETE
+        </button>
       </div>
       <div className='rate-area'>
         <form onSubmit={handleSubmit}>
@@ -139,10 +149,7 @@ export default function WineDetail(props) {
             <button className="btnLarge" id="btn-create" type="submit">
               UPDATE
             </button>
-        </form>
-        <button onClick={() => handleDelete()}>
-              DELETE
-            </button>
+        </form> 
       </div>
     </div>
   );

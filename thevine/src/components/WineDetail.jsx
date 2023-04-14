@@ -69,8 +69,12 @@ export default function WineDetail(props) {
   
   return (
     <div id='detail'>
-      <div className='wine-area'>
+      <div className='rate-info'>
+      <img src={wine?.image} id="detail-image"/>
         <h1>{wine?.producer}</h1>
+        <p id='detail-info-p'>{wine?.area}</p>
+        <p id='detail-info-p'>{wine?.grape}</p>
+        <p id='detail-info-p'>{wine?.vintage}</p>
       </div>
       <div className='rate-area'>
         <form onSubmit={handleFormSubmit}>

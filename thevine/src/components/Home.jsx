@@ -25,6 +25,7 @@ export default function Home(props) {
           </div>
         </div>
         <div className="top-box">
+          <div className="topcard-container">
           {props.wineContent.map((wine) => {
             if (wine.rated === true && wine?.ratings?.[0]?.rating >= 4.0) {
               return (
@@ -43,6 +44,7 @@ export default function Home(props) {
               );
             }
           })}
+          </div>
         </div>
       </div>
     </div>

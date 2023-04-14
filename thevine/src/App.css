@@ -250,7 +250,6 @@
   height: 75vh;
   width: 35vw;
   border-radius: 20px;
-  overflow-y: scroll;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -258,28 +257,35 @@
   box-shadow: 1px 1px 10px 1px;
 }
 
+.topcard-container {
+  height: 70vh;
+  overflow: scroll;
+  border-radius: 20px;
+}
+
 .top-card {
   background-color: tan;
-  height: 33vh;
+  height: 30vh;
   width: 32vw;
   border-radius: 10px;
-  margin: 10px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
 }
 
 .top-info {
+  height: 20px;
   width: 18vw;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  margin: 5px;
+  padding: 10px;
   font-size: 10px;
 }
 
 #top-wine-image {
-  height: 33vh;
+  height: 30vh;
   width: 14vw;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -364,7 +370,7 @@
 #detail {
   background-color: white;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   border: 1px solid;
   display: flex;
   justify-content: space-between;
@@ -372,9 +378,33 @@
 }
 
 .rate-area {
-  border: 1px solid;
+  border-left: 1px solid;
+  height: 75vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .rate-info {
-  border: 1px solid;
+  height: 75vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#detail-image {
+  height: 250px;
+  border-radius: 30px;
+}
+
+#detail-info-p {
+  margin: 5px;
+}
+
+#detail-delete {
+  margin: 10px;
 }
