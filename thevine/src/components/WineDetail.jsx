@@ -68,7 +68,7 @@ export default function WineDetail(props) {
 
   
   return (
-    <div className='wine-detail'>
+    <div id='detail'>
       <div className='wine-area'>
         <h1>{wine?.producer}</h1>
       </div>

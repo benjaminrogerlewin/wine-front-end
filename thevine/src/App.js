@@ -16,7 +16,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [onRegister, setOnRegister] = useState(false)
   const [wineContent, setWineContent] = useState([])
-  const [opacity, setOpacity] = useState()
+  const [userContent, setUserContent] = useState([])
 
   const handleLogin = () => {
     setIsLoggedIn(true)
@@ -41,21 +41,35 @@ function App() {
     setOnRegister(false)
   }
 
-  const getContent = async() => {
+  const getContent = async () => {
     const response = await Client.get(`/wines`).then((response) => {
       setWineContent(response.data)
       console.log(response.data)
-    });
-  };
+    })
+  }
+
+  const getUser = async () => {
+    const response = await Client.get(`/users`).then((response) => {
+      setUserContent(response.data)
+      console.log(response.data)
+    })
+    
+  }
 
   useEffect(() => {
     getContent()
+    getUser()
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'
     setIsLoggedIn(isLoggedIn)
   }, [])
 
+  console.log(userContent)
+
   return (
     <div className="App">
+      {/* <div className='welcome'>
+        {isLoggedIn && <h1>Welcome to The Vine, {userContent?.[0]?.username}!</h1>}
+      </div> */}
       <div className='background-cover' style={{backgroundColor: 'rgb(255, 255, 255, .5)'}}>
         {!isLoggedIn && <Login key='login' handleLogin={handleLogin} handleNavbar={handleNavbar} handleNavLogin={handleNavLogin}/>}
         {isLoggedIn && !onRegister && <Nav handleSignOut={handleSignOut}/>}

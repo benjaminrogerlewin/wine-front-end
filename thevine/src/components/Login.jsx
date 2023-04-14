@@ -4,14 +4,14 @@ export default function Login(props) {
   return (
     <div className="login">
       <div className="login-box">
-        <h1> Please Login! </h1>
+        <h1 className="login-title"> Please Login! </h1>
         <form className="login-form">
           <label>Email:</label>
-          <input />
+          <input id='input' />
           <br></br>
           <br></br>
           <label>Password:</label>
-          <input />
+          <input id='input' />
           <br></br>
           <br></br>
         </form>
@@ -21,6 +21,7 @@ export default function Login(props) {
               props.handleLogin();
               props.handleNavLogin();
             }}
+            className='login-btn'
           >
             Login
           </button>
@@ -31,6 +32,7 @@ export default function Login(props) {
               props.handleLogin();
               props.handleNavbar();
             }}
+            className='register-btn'
           >
             Register
           </button>
