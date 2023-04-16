@@ -96,7 +96,7 @@ export default function WineDetail(props) {
               value={formData.rating}
               onChange={handleChange}
               className="formInput"
-            />
+            />/5
             <br></br>
             <br></br>
             <div>

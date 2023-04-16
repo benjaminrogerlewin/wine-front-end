@@ -2,7 +2,7 @@ export default function Home(props) {
   return (
     <div>
       <div className="recent-title">
-        <h1>Most Recent:</h1>
+        <h1>Todays Pick:</h1>
       </div>
       <div className="top-title">
         <h1>Top Rated:</h1>

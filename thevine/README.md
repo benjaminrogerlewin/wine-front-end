@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# The Vine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
 
-## Available Scripts
+The Vine is an app that will allow you to rate and review wine!
 
-In the project directory, you can run:
+It will provide the user with opportunities to rate and review their favorite (or least favorite) wines in an organized way.
 
-### `npm start`
+## User Stories
+ As a user ...
+- [x] ... I want to rate a wine
+- [x] ... I want to review a wine
+- [x] ... I want to update a wine rating
+- [x] ... I want to delete a wine rating
+- [ ] ... I want to be able to register
+- [ ] ... I want to be able to login
+- [ ] ... I want to be able to signout
+## ERD
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[<img src="https://i.imgur.com/jShYXU4.png" />](https://app.diagrams.net/#G1x_K7ghkf4eODsezLRKjM2S18yWWeuL7m)
+## Trello
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[<img src="https://i.imgur.com/jDmMyOA.png" />](https://trello.com/b/Tmx9bl5c/wine-app)
 
-### `npm test`
+## Figma (wireframe and component hierarchy)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[<img src="https://i.imgur.com/IWGpqz3.png"/>](https://www.figma.com/file/FrJwrdDuMs1rArpA7IAEGm/Untitled?node-id=0-1&t=KbtBgEAtErACp4Nt-0)
