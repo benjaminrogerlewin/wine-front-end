@@ -123,8 +123,8 @@
 }
 
 .logo-image {
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   cursor: pointer;
 }
 
@@ -235,14 +235,14 @@
   margin-top: 3px;
 }
 
-.recent-info {
+.todays-info {
   width: 25vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 5px;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .top-box {

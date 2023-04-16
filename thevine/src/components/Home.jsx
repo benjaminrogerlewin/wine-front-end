@@ -13,11 +13,8 @@ export default function Home(props) {
             <div className="recent-image">
               <img src={props.wineContent?.[1]?.image} id="recent-wine-image" />
             </div>
-            <div className="recent-info">
-              <h1 id="wine-rating">
-                {props.wineContent?.[1]?.ratings?.[0]?.rating}
-              </h1>
-              <h1 id="wine-name">{props.wineContent?.[1]?.producer}</h1>
+            <div className="todays-info">
+              <h1 id="todays-name">{props.wineContent?.[1]?.producer}</h1>
               <p>{props.wineContent?.[1]?.area}</p>
               <p>{props.wineContent?.[1]?.grape}</p>
               <p>{props.wineContent?.[1]?.vintage}</p>
@@ -26,24 +23,24 @@ export default function Home(props) {
         </div>
         <div className="top-box">
           <div className="topcard-container">
-          {props.wineContent.map((wine) => {
-            if (wine.rated === true && wine?.ratings?.[0]?.rating >= 4.0) {
-              return (
-                <div key={wine.id} className="top-card">
-                  <div className="top-image">
-                    <img src={wine.image} id="top-wine-image" />
+            {props.wineContent.map((wine) => {
+              if (wine.rated === true && wine?.ratings?.[0]?.rating >= 4.0) {
+                return (
+                  <div key={wine.id} className="top-card">
+                    <div className="top-image">
+                      <img src={wine.image} id="top-wine-image" />
+                    </div>
+                    <div className="top-info">
+                      <h1 id="wine-rating">{wine?.ratings?.[0]?.rating}</h1>
+                      <h1 id="wine-name">{wine.producer}</h1>
+                      <p>{wine.area}</p>
+                      <p>{wine.grape}</p>
+                      <p>{wine.vintage}</p>
+                    </div>
                   </div>
-                  <div className="top-info">
-                    <h1 id="wine-rating">{wine?.ratings?.[0]?.rating}</h1>
-                    <h1 id="wine-name">{wine.producer}</h1>
-                    <p>{wine.area}</p>
-                    <p>{wine.grape}</p>
-                    <p>{wine.vintage}</p>
-                  </div>
-                </div>
-              );
-            }
-          })}
+                );
+              }
+            })}
           </div>
         </div>
       </div>
