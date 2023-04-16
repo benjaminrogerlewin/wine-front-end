@@ -8,7 +8,7 @@
 }
 
 .background-cover {
-  background-color: rgb(255, 255, 255, .5);
+  background-color: rgb(255, 251, 255, .5);
 }
 
 .login {
@@ -20,7 +20,7 @@
 }
 
 .login-box {
-  background-color: lightgray;
+  background-color: #ebe0e1;
   margin: auto;
   height: 500px;
   width: 800px;
@@ -63,7 +63,7 @@
   border: 1px solid;
   border-radius: 10px;
   cursor: pointer;
-  background-color: rgb(116, 116, 222);
+  background-color: #efbd94;
   margin-top: -50px;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .register-box {
-  background-color: lightgray;
+  background-color: #ebe0e1;
   margin: auto;
   height: 800px;
   width: 800px;
@@ -90,23 +90,23 @@
 
 .register-btn {
   cursor: pointer;
-  background-color: lightgray;
+  background-color: #ebe0e1;
   border: none;
-  color: rgb(200, 102, 102);
+  color: #201a1b;
   text-decoration: underline;
   font-size: 20px;
   margin: 20px;
 }
 
 .welcome {
-  background-color: lightgray;
+  background-color: #ebe0e1;
   position: absolute;
   margin-left: 400px;
   font-size: 15px;
 }
 
 .nav-bar {
-  background-color: lightgray;
+  background-color: #ebe0e1;
   height: 10vh;
   width: 100vw;
   display: flex;
@@ -143,7 +143,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255, 0);
+  background-color: #ebe0e1;
   border: none;
 }
 
@@ -157,7 +157,7 @@
 
 #btn {
   font-size: 20px;
-  background-color: lightgrey;
+  background-color: #ebe0e1;
   border: none;
   cursor: pointer;
 }
@@ -169,7 +169,8 @@
   border: 1px solid;
   border-radius: 10px;
   cursor: pointer;
-  background-color: rgb(202, 136, 136);
+  background-color: #984061;
+  color: white;
 }
 
 .signout-btn:hover {
@@ -180,7 +181,7 @@
   /* background-repeat: no-repeat;
   background-size: cover;
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvVUQCBYqtbq8_An3EdANDRHI6gmOl5dGZmA&usqp=CAU'); */
-  background-color: white;
+  background-color: #fffbff;
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
@@ -204,7 +205,7 @@
 }
 
 .recent-box {
-  background-color: lightgray;
+  background-color: #ebe0e1;
   height: 75vh;
   width: 55vw;
   border-radius: 20px;
@@ -216,7 +217,7 @@
 }
 
 .recent-card {
-  background-color: tan;
+  background-color: #ffdcc1;
   margin: 10px;
   height: 70vh;
   width: 50vw;
@@ -246,7 +247,7 @@
 }
 
 .top-box {
-  background-color: lightgray;
+  background-color: #ebe0e1;
   height: 75vh;
   width: 35vw;
   border-radius: 20px;
@@ -264,7 +265,7 @@
 }
 
 .top-card {
-  background-color: tan;
+  background-color: #ffdcc1;
   height: 30vh;
   width: 32vw;
   border-radius: 10px;
@@ -294,7 +295,7 @@
 .wine-container {
   width: 100vw;
   height: 90vh;
-  background-color: white;
+  background-color: #fffbff;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: .5rem;
@@ -303,7 +304,7 @@
 }
 
 .wine-card {
-  background-color: lightgray;
+  background-color: #ebe0e1;
   height: 36vh;
   border-radius: 1rem;
   cursor: pointer;
@@ -342,7 +343,7 @@
 .ratings-container {
   width: 100vw;
   height: 90vh;
-  background-color: white;
+  background-color: #fffbff;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: .5rem;
@@ -351,7 +352,7 @@
 }
 
 .ratings-card {
-  background-color: lightgray;
+  background-color: #ebe0e1;
   height: 36vh;
   border-radius: 1rem;
   cursor: pointer;
@@ -368,7 +369,7 @@
 }
 
 #detail {
-  background-color: white;
+  background-color: #fffbff;
   width: 100vw;
   height: 90vh;
   border: 1px solid;
